@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function Input({ placeholder, value, onChangeValue }) {
+export default function Input({ placeholder, value, onChangeValue, type }) {
   return (
     <input
-      type="text"
+      type={type}
       value={value}
       onChange={(e) => onChangeValue(e.target.value)}
       placeholder={placeholder}

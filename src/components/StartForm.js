@@ -2,7 +2,7 @@ import React from "react";
 
 const StartForm = () => {
   return (
-    <div className="w-2/5 h-2/5 flex flex-col justify-center items-start">
+    <div>
       <h2 className="text-stone-100 text-xl">
         Up-skilling requires time commitment
       </h2>
@@ -13,10 +13,6 @@ const StartForm = () => {
         You will spend<br></br>- 6 hours/week for the first 5 weeks<br></br>- 15
         hours/week for the last 3 weeks
       </p>
-      <br></br>
-      <button className="bg-blue-600 p-2 rounded-md text-lg text-stone-100 font-medium">
-        I agree
-      </button>
     </div>
   );
 };
