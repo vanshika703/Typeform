@@ -6,6 +6,8 @@ import { formData } from "../utils/constants";
 import logo from "../utils/img/logo.png";
 import StartForm from "./StartForm";
 import Select from "./Select";
+import RadioInput from "./RadioInput";
+import CheckboxInput from "./CheckboxInput";
 
 const FormContainer = () => {
   const [index, setIndex] = useState(0);
@@ -69,7 +71,22 @@ const FormContainer = () => {
                   />
                 );
               case "select":
-                return <Select/>;
+                return <Select />;
+              case "radioInput":
+                return (
+                  <RadioInput
+                    name={formValues[index].name}
+                    options={formValues[index].options}
+                  />
+                );
+
+              case "checkboxInput":
+                return (
+                  <CheckboxInput
+                    name={formValues[index].name}
+                    options={formValues[index].options}
+                  />
+                );
               case "endPage":
                 return;
               default:

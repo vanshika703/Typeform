@@ -1,5 +1,5 @@
 export const formData = [
-  {
+  /* {
     name: "startPage",
     question: "",
     value: "",
@@ -36,26 +36,34 @@ export const formData = [
     fieldType: "select",
     type: "text",
     initalState: "",
-  },
-  {
+  }, */
+  /* {
     name: "role",
     question: "Your role in your company?",
     value: "",
     required: true,
     regex: "",
-    fieldType: "input",
+    fieldType: "radioInput",
     type: "radio",
     initalState: "",
-  },
+    options: ["Founder or CXO", "Product Team", "Marketing Team", "VC", "Other"]
+  }, */
   {
     name: "goal",
     question: "what's your professional goal for the next 12 months?",
     value: "",
     required: true,
     regex: "",
-    fieldType: "input",
+    fieldType: "checkboxInput",
     type: "checkbox",
     initalState: "",
+    options: [
+      "Get Hired",
+      "Get Promoted",
+      "Connect with like-minded people",
+      "Structured Approch to Growth",
+      "Build a Growth Team",
+    ],
   },
   {
     name: "email",

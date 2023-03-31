@@ -5,11 +5,7 @@ import Select from "./components/Select";
 
 function App() {
   return (
-    // <div className="bg-[#000] h-screen w-screen">
     <FormContainer />
-    // <StartForm />
-    // </div>
-    //<Select/>
   );
 }
 
