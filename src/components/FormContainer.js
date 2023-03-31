@@ -16,8 +16,16 @@ const FormContainer = () => {
   const [error, setError] = useState("");
 
   const onChangeValue = (value) => {
+    // console.log(value);
     setError("");
     setInputValue(value);
+  };
+
+  const onChangeCheckBox = (value) => {
+    setError("");
+    if (!inputValue) return setInputValue(value);
+    const newValue = inputValue + "," + value;
+    setInputValue(newValue);
   };
 
   const handleSetInput = () => {
@@ -37,6 +45,16 @@ const FormContainer = () => {
     e.preventDefault();
   };
 
+  useEffect(() => {
+    if (index === formValues.length - 1) {
+      console.log("Thanks for submitting");
+      console.log("The data you submitted is now available:");
+      formValues.forEach((e) => {
+        if (e.question) console.log("Question: " + e.question + "\n" + e.value);
+      });
+    }
+  }, [index]);
+
   return (
     <>
       <div className="bg-black h-screen w-screen flex items-center justify-center">
@@ -51,7 +69,7 @@ const FormContainer = () => {
           onSubmit={onSubmit}
           className="w-2/5 h-1/5 flex flex-col justify-center items-start"
         >
-          <p className="text-stone-100">{index + 1}</p>
+          {index !== 0 && <p className="text-stone-100">{index}</p>}
           <Question
             question={formValues[index].question}
             required={formValues[index].required}
@@ -77,6 +95,7 @@ const FormContainer = () => {
                   <RadioInput
                     name={formValues[index].name}
                     options={formValues[index].options}
+                    onChangeValue={onChangeValue}
                   />
                 );
 
@@ -85,6 +104,7 @@ const FormContainer = () => {
                   <CheckboxInput
                     name={formValues[index].name}
                     options={formValues[index].options}
+                    onChangeValue={onChangeCheckBox}
                   />
                 );
               case "endPage":
@@ -94,7 +114,7 @@ const FormContainer = () => {
             }
           })()}
 
-          {console.log(inputValue)}
+          {/* {console.log(inputValue)} */}
           {error ? (
             <div className=" flex items-center text-xs text-red-800 bg-red-100 p-1">
               <svg
@@ -112,27 +132,29 @@ const FormContainer = () => {
               <p>{error}</p>
             </div>
           ) : (
-            <button
-              className="bg-blue-600 py-1 px-3 rounded-md text-md text-stone-100 font-medium flex justify-center items-center hover:bg-blue-500"
-              onClick={handleSetInput}
-            >
-              OK{" "}
-              <svg
-                className="inline ml-1"
-                stroke="currentColor"
-                fill="currentColor"
-                strokeWidth="0"
-                viewBox="0 0 16 16"
-                height="1em"
-                width="1em"
-                xmlns="http://www.w3.org/2000/svg"
+            index !== formValues.length - 1 && (
+              <button
+                className="bg-blue-600 py-1 px-3 rounded-md text-md text-stone-100 font-medium flex justify-center items-center hover:bg-blue-500"
+                onClick={handleSetInput}
               >
-                <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"></path>
-              </svg>
-            </button>
+                OK{" "}
+                <svg
+                  className="inline ml-1"
+                  stroke="currentColor"
+                  fill="currentColor"
+                  strokeWidth="0"
+                  viewBox="0 0 16 16"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"></path>
+                </svg>
+              </button>
+            )
           )}
 
-          {console.log("formvalue", formValues)}
+          {/* {console.log("formvalue", formValues)} */}
         </form>
       </div>
     </>

@@ -1,5 +1,5 @@
 export const formData = [
-  /* {
+  {
     name: "startPage",
     question: "",
     value: "",
@@ -27,7 +27,7 @@ export const formData = [
     type: "text",
     initalState: "",
   },
-  {
+  /* {
     name: "industry",
     question: "What industry is your company in?",
     value: "",
@@ -37,7 +37,7 @@ export const formData = [
     type: "text",
     initalState: "",
   }, */
-  /* {
+  {
     name: "role",
     question: "Your role in your company?",
     value: "",
@@ -46,8 +46,14 @@ export const formData = [
     fieldType: "radioInput",
     type: "radio",
     initalState: "",
-    options: ["Founder or CXO", "Product Team", "Marketing Team", "VC", "Other"]
-  }, */
+    options: [
+      "Founder or CXO",
+      "Product Team",
+      "Marketing Team",
+      "VC",
+      "Other",
+    ],
+  },
   {
     name: "goal",
     question: "what's your professional goal for the next 12 months?",
