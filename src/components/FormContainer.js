@@ -67,7 +67,7 @@ const FormContainer = () => {
         </nav>
         <form
           onSubmit={onSubmit}
-          className="w-2/5 h-1/5 flex flex-col justify-center items-start"
+          className="w-4/5 sm:w-2/5 h-1/5 flex flex-col justify-center items-start"
         >
           {index !== 0 && <p className="text-stone-100">{index}</p>}
           <Question
