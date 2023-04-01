@@ -69,7 +69,9 @@ const FormContainer = () => {
           onSubmit={onSubmit}
           className="w-4/5 sm:w-2/5 h-1/5 flex flex-col justify-center items-start"
         >
-          {index !== 0 && <p className="text-stone-100">{index}</p>}
+          {index !== 0 && index !== formValues.length - 1 && (
+            <p className="text-stone-100">{index}</p>
+          )}
           <Question
             question={formValues[index].question}
             required={formValues[index].required}
@@ -96,6 +98,7 @@ const FormContainer = () => {
                     name={formValues[index].name}
                     options={formValues[index].options}
                     onChangeValue={onChangeValue}
+                    value={inputValue}
                   />
                 );
 
@@ -154,7 +157,7 @@ const FormContainer = () => {
             )
           )}
 
-          {/* {console.log("formvalue", formValues)} */}
+          {console.log("formvalue", formValues)}
         </form>
       </div>
     </>

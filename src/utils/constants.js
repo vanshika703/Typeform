@@ -1,5 +1,5 @@
 export const formData = [
-  {
+  /* {
     name: "startPage",
     question: "",
     value: "",
@@ -26,7 +26,7 @@ export const formData = [
     fieldType: "input",
     type: "text",
     initalState: "",
-  },
+  }, */
   /* {
     name: "industry",
     question: "What industry is your company in?",
