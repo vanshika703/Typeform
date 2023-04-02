@@ -20,6 +20,7 @@ function CheckboxInput({ name, options, onChangeValue, removeValue, value }) {
             key={index}
           >
             <input
+              className="hidden"
               type="checkbox"
               id={option}
               name={name}
