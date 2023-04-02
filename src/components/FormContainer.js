@@ -28,6 +28,18 @@ const FormContainer = () => {
     setInputValue(newValue);
   };
 
+  const removeValue = (value) => {
+    console.log("input", inputValue);
+    const tempArray = inputValue.split(",");
+    console.log("split", tempArray);
+    const index = tempArray.findIndex((el) => el === value);
+    console.log("index", index);
+    tempArray.splice(index, 1);
+    const joinedString = tempArray.join();
+    setInputValue(joinedString);
+    console.log("finalinput", joinedString);
+  };
+
   const handleSetInput = () => {
     if (formValues[index].required && !inputValue) {
       setError("Please fill this in");
@@ -108,6 +120,8 @@ const FormContainer = () => {
                     name={formValues[index].name}
                     options={formValues[index].options}
                     onChangeValue={onChangeCheckBox}
+                    removeValue={removeValue}
+                    value={inputValue}
                   />
                 );
               case "endPage":
