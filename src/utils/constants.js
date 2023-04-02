@@ -1,5 +1,5 @@
 export const formData = [
-  /* {
+  {
     name: "startPage",
     question: "",
     value: "",
@@ -26,7 +26,7 @@ export const formData = [
     fieldType: "input",
     type: "text",
     initalState: "",
-  }, */
+  },
   /* {
     name: "industry",
     question: "What industry is your company in?",
@@ -37,7 +37,7 @@ export const formData = [
     type: "text",
     initalState: "",
   }, */
-  /* {
+  {
     name: "role",
     question: "Your role in your company?",
     value: "",
@@ -53,7 +53,7 @@ export const formData = [
       "VC",
       "Other",
     ],
-  }, */
+  },
   {
     name: "goal",
     question: "what's your professional goal for the next 12 months?",
