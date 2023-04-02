@@ -16,7 +16,7 @@ function CheckboxInput({ name, options, onChangeValue, removeValue, value }) {
       {options.map((option, index) => {
         return (
           <div
-            className="text-stone-100 w-3/5 m-1 p-2 border-[1px] border-stone-100 rounded-md hover:bg-stone-700"
+            className="text-stone-100 w-4/5 sm:w-3/5 m-1 p-2 border-[1px] border-stone-100 rounded-md hover:bg-stone-700"
             key={index}
           >
             <input
